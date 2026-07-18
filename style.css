@@ -87,14 +87,17 @@ nav a:hover{
 ========================== */
 
 header{
-    min-height:80vh;
+    min-height:48vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:100px 20px 40px;
+    padding:50px 20px 10px;
 }
-
+.hero{
+    text-align:center;
+    margin-top:-40px;
+}
 .hero h1{
     font-size:70px;
     color:#d4af37;
@@ -306,10 +309,8 @@ footer{
 ========================== */
 
 .stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-    padding:60px 8%;
+    margin-top:20px;
+    padding:20px 8%;
 }
 
 .stat{

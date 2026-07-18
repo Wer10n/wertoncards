@@ -98,3 +98,19 @@ footer{
     padding:40px;
     color:#888;
 }
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.secondary{
+    background:transparent;
+    border:2px solid #ff9800;
+}
+
+.secondary:hover{
+    background:#ff9800;
+}

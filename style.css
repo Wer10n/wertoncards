@@ -17,8 +17,11 @@ header{
 }
 
 h1{
-    font-size:60px;
+    font-size:72px;
     color:#ff9800;
+    letter-spacing:4px;
+    font-weight:800;
+    text-transform:uppercase;
 }
 
 p{

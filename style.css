@@ -363,5 +363,83 @@ footer{
         grid-template-columns:1fr;
 
     }
+/* ==========================
+   FOOTER V2
+========================== */
 
+footer{
+
+    margin-top:80px;
+
+    background:#090909;
+
+    border-top:1px solid #222;
+
+    padding:60px 20px;
+
+}
+
+.footer-content{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.footer-content h2{
+
+    color:#d4af37;
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+}
+
+.footer-content p{
+
+    color:#9f9f9f;
+
+}
+
+.footer-links{
+
+    margin:35px 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.footer-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#d4af37;
+
+}
+
+.copyright{
+
+    margin-top:35px;
+
+    color:#666;
+
+}
 }

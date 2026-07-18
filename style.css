@@ -282,3 +282,67 @@ footer{
 .arrow:hover{
     transform:scale(1.1);
 }
+/* ==========================
+   STATS SECTION
+========================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    padding:60px 8%;
+}
+
+.stat{
+
+    background:#171717;
+
+    border:1px solid #222;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    font-size:30px;
+
+}
+
+.stat:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#d4af37;
+
+    box-shadow:0 0 20px rgba(212,175,55,.25);
+
+}
+
+.stat h3{
+
+    margin:15px 0;
+
+    color:#d4af37;
+
+    font-size:22px;
+
+}
+
+.stat p{
+
+    color:#bdbdbd;
+
+}
+
+@media(max-width:768px){
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

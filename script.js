@@ -20,3 +20,18 @@ cards.forEach((card, index) => {
     }, index * 200);
 
 });
+const cardsContainer = document.querySelector(".cards");
+
+document.getElementById("next").onclick = () => {
+    cardsContainer.scrollBy({
+        left:320,
+        behavior:"smooth"
+    });
+};
+
+document.getElementById("prev").onclick = () => {
+    cardsContainer.scrollBy({
+        left:-320,
+        behavior:"smooth"
+    });
+};

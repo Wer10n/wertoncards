@@ -117,3 +117,8 @@ footer{
 .secondary:hover{
     background:#ff9800;
 }
+.logo{
+    width:320px;
+    max-width:90%;
+    margin-bottom:25px;
+}

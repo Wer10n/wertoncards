@@ -443,3 +443,34 @@ footer{
 
 }
 }
+/* ==========================
+   VINTED SECTION
+========================== */
+
+.vinted{
+
+    text-align:center;
+
+    padding:90px 20px;
+
+}
+
+.vinted h2{
+
+    color:#d4af37;
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+.vinted p{
+
+    color:#bdbdbd;
+
+    margin-bottom:35px;
+
+    font-size:18px;
+
+}

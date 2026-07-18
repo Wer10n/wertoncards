@@ -239,3 +239,25 @@ footer{
     }
 
 }
+.slider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+}
+
+.arrow{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#d4af37;
+    color:#111;
+    font-size:26px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.arrow:hover{
+    transform:scale(1.1);
+}

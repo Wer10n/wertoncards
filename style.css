@@ -1,640 +1,443 @@
-/* ==========================
-   PROJECT LION v1
-========================== */
+/* =========================================
+WERTONCARDS - PROJECT LION V3 FINAL
+========================================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#0b0b0b;
-    color:#f5f5f5;
-    line-height:1.6;
+font-family:'Poppins',sans-serif;
+background:#0b0b0b;
+color:#f5f5f5;
+line-height:1.6;
+overflow-x:hidden;
 }
 
-/* ==========================
-   NAVBAR
-========================== */
+img{
+max-width:100%;
+display:block;
+}
+
+/* =========================
+NAVBAR
+========================= */
 
 nav{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    position:fixed;
-    top:0;
-    left:0;
-    background:rgba(11,11,11,.95);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-    border-bottom:1px solid #222;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 8%;
+background:rgba(11,11,11,.94);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(212,175,55,.15);
+z-index:1000;
+transition:.3s;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    color:#d4af37;
-    font-size:28px;
-    font-weight:700;
-    letter-spacing:2px;
+display:flex;
+align-items:center;
+gap:12px;
+color:#d4af37;
+font-size:26px;
+font-weight:700;
+letter-spacing:1px;
 }
 
 .logo img{
-
-    width:50px;
-    height:50px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-}
-
-.logo span{
-
-    color:#d4af37;
-
+width:48px;
+height:48px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid rgba(212,175,55,.35);
 }
 
 nav ul{
-    display:flex;
-    list-style:none;
-    gap:35px;
+list-style:none;
+display:flex;
+gap:28px;
 }
 
 nav a{
-    color:#f5f5f5;
-    text-decoration:none;
-    transition:.3s;
+color:#f5f5f5;
+text-decoration:none;
+font-weight:500;
+transition:.25s;
 }
 
-nav a:hover{
-    color:#d4af37;
-}
+nav a:hover
 
-/* ==========================
-   HERO
-========================== */
+/* =========================
+HERO - BAMM LAYOUT
+========================= */
 
 header{
-    min-height:48vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:50px 20px 10px;
+min-height:34vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:95px 20px 0;
 }
+
 .hero{
-    text-align:center;
-    margin-top:-40px;
+margin-top:-12px;
 }
+
 .hero h1{
-    font-size:70px;
-    color:#d4af37;
-    margin-bottom:15px;
+font-size:clamp(3.2rem,8vw,5.8rem);
+font-weight:800;
+color:#d4af37;
+line-height:1;
+margin-bottom:14px;
+text-shadow:0 0 35px rgba(212,175,55,.28);
+animation:heroGlow 3s ease-in-out infinite;
+}
+
+@keyframes heroGlow{
+0%,100%{
+text-shadow:0 0 25px rgba(212,175,55,.25);
+}
+50%{
+text-shadow:0 0 48px rgba(212,175,55,.45);
+}
 }
 
 .hero h2{
-    font-size:30px;
-    margin-bottom:20px;
+font-size:clamp(1.2rem,3vw,2rem);
+margin-bottom:10px;
 }
 
 .hero p{
-    color:#bdbdbd;
-    font-size:20px;
-    margin-bottom:40px;
+color:#b5b5b5;
+margin-bottom:26px;
 }
 
 .buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
 }
 
+/* =========================
+BUTTONS
+========================= */
+
 .btn{
-    background:#d4af37;
-    color:#111;
-    text-decoration:none;
-    padding:15px 35px;
-    border-radius:10px;
-    font-weight:600;
-    transition:.3s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 28px;
+border-radius:14px;
+background:#d4af37;
+color:#111;
+text-decoration:none;
+font-weight:600;
+transition:.25s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+transform:translateY(-2px);
+box-shadow:0 10px 24px rgba(212,175,55,.25);
 }
 
 .btn-outline{
-    background:transparent;
-    color:#d4af37;
-    border:2px solid #d4af37;
+background:transparent;
+color:#d4af37;
+border:2px solid #d4af37;
 }
 
-.btn-outline:hover{
-    background:#d4af37;
-    color:#111;
-}
+.btn-outline:hover
 
-/* ==========================
-   SECTIONS
-========================== */
+/* =========================
+SECTIONS
+========================= */
 
 section{
-    padding:35px 8%;
+padding:30px 8%;
 }
 
 .section-title{
-    text-align:center;
-    font-size:40px;
-    color:#d4af37;
-    margin-bottom:50px;
+text-align:center;
+color:#d4af37;
+font-size:clamp(2rem,5vw,3rem);
+margin-bottom:22px;
 }
 
-/* ==========================
-   CARDS
-========================== */
+/* =========================
+FEATURED CARD - KÖZÉPEN
+========================= */
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+#featured{
+padding-top:8px;
 }
-
-.card{
-    background:linear-gradient(180deg,#1b1b1b,#111);
-    border-radius:20px;
-    overflow:hidden;
-    border:1px solid rgba(212,175,55,.15);
-    transition:.35s;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-}
-
-.card:hover{
-
-    transform:translateY(-10px) scale(1.02);
-
-    border-color:#d4af37;
-
-    box-shadow:
-        0 0 30px rgba(212,175,55,.25),
-        0 20px 40px rgba(0,0,0,.45);
-
-}
-
-.card:hover img{
-
-    transform:scale(1.05);
-
-}
-
-.card h3{
-
-    padding:20px 20px 8px;
-
-    color:white;
-
-    font-size:22px;
-
-}
-
-.card span{
-
-    display:block;
-
-    padding:0 20px 25px;
-
-    color:#d4af37;
-
-    font-weight:600;
-
-}
-
-/* ==========================
-   ABOUT
-========================== */
-
-.about-text{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-    color:#bdbdbd;
-    font-size:18px;
-}
-
-/* ==========================
-   CONTACT
-========================== */
-
-#contact{
-    text-align:center;
-}
-
-/* ==========================
-   FOOTER
-========================== */
-
-footer{
-    border-top:1px solid #222;
-    text-align:center;
-    padding:30px;
-    color:#777;
-}
-
-/* ==========================
-   RESPONSIVE
-========================== */
-
-@media(max-width:768px){
-
-    nav{
-        flex-direction:column;
-        gap:20px;
-    }
-
-    nav ul{
-        gap:18px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero h1{
-        font-size:45px;
-    }
-
-    .hero h2{
-        font-size:22px;
-    }
-
-    .section-title{
-        font-size:30px;
-    }
-
-}
-.slider{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-}
-
-.arrow{
-    width:55px;
-    height:55px;
-    border:none;
-    border-radius:50%;
-    background:#d4af37;
-    color:#111;
-    font-size:26px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.arrow:hover{
-    transform:scale(1.1);
-}
-/* ==========================
-   STATS SECTION
-========================== */
-
-.stats{
-    margin-top:20px;
-    padding:20px 8%;
-}
-
-.stat{
-
-    background:#171717;
-
-    border:1px solid #222;
-
-    border-radius:18px;
-
-    padding:35px;
-
-    text-align:center;
-
-    transition:.3s;
-
-    font-size:30px;
-
-}
-
-.stat:hover{
-
-    transform:translateY(-8px);
-
-    border-color:#d4af37;
-
-    box-shadow:0 0 20px rgba(212,175,55,.25);
-
-}
-
-.stat h3{
-
-    margin:15px 0;
-
-    color:#d4af37;
-
-    font-size:22px;
-
-}
-
-.stat p{
-
-    color:#bdbdbd;
-
-}
-
-@media(max-width:768px){
-
-    .stats{
-
-        grid-template-columns:1fr;
-
-    }
-/* ==========================
-   FOOTER V2
-========================== */
-
-footer{
-
-    margin-top:80px;
-
-    background:#090909;
-
-    border-top:1px solid #222;
-
-    padding:60px 20px;
-
-}
-
-.footer-content{
-
-    max-width:1000px;
-
-    margin:auto;
-
-    text-align:center;
-
-}
-
-.footer-content h2{
-
-    color:#d4af37;
-
-    font-size:32px;
-
-    margin-bottom:15px;
-
-}
-
-.footer-content p{
-
-    color:#9f9f9f;
-
-}
-
-.footer-links{
-
-    margin:35px 0;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:30px;
-
-    flex-wrap:wrap;
-
-}
-
-.footer-links a{
-
-    color:white;
-
-    text-decoration:none;
-
-    transition:.3s;
-
-}
-
-.footer-links a:hover{
-
-    color:#d4af37;
-
-}
-
-.copyright{
-
-    margin-top:35px;
-
-    color:#666;
-
-}
-}
-/* ==========================
-   VINTED SECTION
-========================== */
-
-.vinted{
-
-    text-align:center;
-
-    padding:90px 20px;
-
-}
-
-.vinted h2{
-
-    color:#d4af37;
-
-    font-size:38px;
-
-    margin-bottom:20px;
-
-}
-
-.vinted p{
-
-    color:#bdbdbd;
-
-    margin-bottom:35px;
-
-    font-size:18px;
-
-}
-/* ========================================
-   PROJECT LION V3 - SINGLE CARD SLIDER
-======================================== */
-
-/* HERO FELJEBB */
-
-header{
-    min-height:48vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:55px 20px 10px;
-}
-
-.hero{
-    margin-top:-35px;
-}
-
-/* SECTIONS KÖZELEBB */
-
-section{
-    padding:50px 8%;
-}
-
-.section-title{
-    margin-bottom:28px;
-}
-
-/* STATS FELJEBB */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-    padding:15px 8% 25px;
-}
-
-/* FEATURED SLIDER */
 
 .featured-slider{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:26px;
 }
 
 .featured-card{
-    max-width:520px;
-    width:100%;
-    background:linear-gradient(180deg,#1b1b1b,#111);
-    border-radius:26px;
-    overflow:hidden;
-    border:1px solid rgba(212,175,55,.18);
-    box-shadow:0 25px 60px rgba(0,0,0,.45);
-    text-align:center;
-    transition:.3s;
+width:min(100%,520px);
+background:linear-gradient(180deg,#1b1b1b,#111);
+border-radius:28px;
+overflow:hidden;
+border:1px solid rgba(212,175,55,.18);
+box-shadow:0 28px 60px rgba(0,0,0,.48);
+text-align:center;
+transition:.3s;
 }
 
 .featured-card:hover{
-    transform:translateY(-6px);
-    border-color:#d4af37;
+transform:translateY(-6px);
+border-color:#d4af37;
+}
+
+.featured-card.fade{
+opacity:.6;
+transform:scale(.98);
 }
 
 .featured-card img{
-    width:100%;
-    height:560px;
-    object-fit:cover;
-    transition:.35s;
+width:100%;
+height:460px;
+object-fit:cover;
+transition:.35s;
 }
 
 .featured-card:hover img{
-    transform:scale(1.03);
+transform:scale(1.03);
 }
 
 .featured-card h3{
-    padding:24px 24px 10px;
-    font-size:30px;
-    color:white;
+padding:22px 22px 8px;
+font-size:1.9rem;
 }
 
 .featured-card p{
-    color:#d4af37;
-    font-size:22px;
-    font-weight:700;
-    margin-bottom:26px;
+color:#d4af37;
+font-size:1.2rem;
+font-weight:700;
+margin-bottom:24px;
 }
 
 .arrow{
-    width:60px;
-    height:60px;
-    border:none;
-    border-radius:50%;
-    background:#d4af37;
-    color:#111;
-    font-size:28px;
-    cursor:pointer;
-    transition:.25s;
-    flex-shrink:0;
+width:58px;
+height:58px;
+border:none;
+border-radius:50%;
+background:#d4af37;
+color:#111;
+font-size:1.8rem;
+cursor:pointer;
+transition:.2s;
+flex-shrink:0;
 }
 
 .arrow:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 20px rgba(212,175,55,.35);
+transform:scale(1.08);
+box-shadow:0 0 20px rgba(212,175,55,.35);
 }
 
-/* ANIMÁLT VÁLTÁS */
+/* =========================
+TRUST SECTION - A KÁRTYA ALATT
+========================= */
 
-.featured-card.fade{
-    opacity:.6;
-    transform:scale(.98);
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+padding-top:18px;
 }
 
-/* FOOTER SZEBB */
+.stat{
+background:linear-gradient(180deg,#1b1b1b,#141414);
+border:1px solid rgba(212,175,55,.12);
+border-radius:22px;
+padding:28px;
+text-align:center;
+transition:.25s;
+}
+
+.stat:hover{
+transform:translateY(-5px);
+border-color:#d4af37;
+box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+
+.stat h3{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.stat p{
+color:#b5b5b5;
+}
+
+/* =========================
+ABOUT
+========================= */
+
+.about-text{
+max-width:850px;
+margin:0 auto;
+text-align:center;
+color:#b5b5b5;
+}
+
+/* =========================
+VINTED SECTION
+========================= */
+
+.vinted{
+text-align:center;
+padding-top:24px;
+}
+
+.vinted h2{
+color:#d4af37;
+margin-bottom:12px;
+}
+
+.vinted p{
+color:#b5b5b5;
+margin-bottom:24px;
+}
+
+/* =========================
+FOOTER
+========================= */
 
 footer{
-    margin-top:70px;
-    background:#090909;
-    border-top:1px solid rgba(212,175,55,.12);
-    padding:55px 20px;
+margin-top:60px;
+background:#090909;
+border-top:1px solid rgba(212,175,55,.12);
+padding:50px 20px;
 }
 
-/* MOBIL */
+.footer-content{
+max-width:1000px;
+margin:0 auto;
+text-align:center;
+}
+
+.footer-content h2{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.footer-content p{
+color:#9a9a9a;
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+gap:24px;
+flex-wrap:wrap;
+margin:26px 0;
+}
+
+.footer-links a{
+color:#f5f5f5;
+text-decoration:none;
+transition:.25s;
+}
+
+.footer-links a:hover
+
+.copyright{
+color:#666;
+font-size:.95rem;
+}
+
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:900px){
 
-    .featured-slider{
-        flex-direction:column;
-    }
+```
+.stats{
+    grid-template-columns:1fr;
+}
 
-    .featured-card img{
-        height:460px;
-    }
+.featured-slider{
+    flex-direction:column;
+    gap:18px;
+}
 
-    .stats{
-        grid-template-columns:1fr;
-    }
+.featured-card img{
+    height:400px;
+}
+```
+
 }
 
 @media(max-width:768px){
 
-    header{
-        min-height:52vh;
-        padding-top:120px;
-    }
+```
+nav{
+    flex-direction:column;
+    gap:12px;
+    padding:14px 6%;
+}
 
-    .hero h1{
-        font-size:46px;
-    }
+nav ul{
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
 
-    .hero h2{
-        font-size:24px;
-    }
+header{
+    min-height:40vh;
+    padding-top:120px;
+}
 
-    .featured-card img{
-        height:380px;
-    }
+.hero h1{
+    font-size:3rem;
+}
 
-    .arrow{
-        width:54px;
-        height:54px;
-    }
+.hero h2{
+    font-size:1.3rem;
+}
+
+.buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.btn{
+    width:100%;
+    max-width:320px;
+}
+
+.featured-card img{
+    height:340px;
+}
+
+.arrow{
+    width:52px;
+    height:52px;
+}
+
+section{
+    padding:26px 6%;
+}
+```
+
 }

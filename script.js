@@ -1,103 +1,134 @@
-// ==========================
-// PROJECT LION v1
-// script.js
-// ==========================
+// ========================================
+// WERTONCARDS - PROJECT LION V3
+// SINGLE CARD SLIDER
+// ========================================
 
-console.log("🦁 Project Lion Loaded");
+const cards = [
 
-// --------------------------
-// CARD FADE-IN ANIMATION
-// --------------------------
+    {
+        image: 'images/card1.jpg',
+        title: '2024 Prizm LeBron James',
+        grade: 'PSA 10',
+        link: 'https://www.vinted.hu/member/262606254'
+    },
 
-const cards = document.querySelectorAll(".card");
+    {
+        image: 'images/card2.jpg',
+        title: '2024 Select Patrick Mahomes',
+        grade: 'PSA 9',
+        link: 'https://www.vinted.hu/member/262606254'
+    },
 
-cards.forEach((card, index) => {
+    {
+        image: 'images/card3.jpg',
+        title: 'Michael Jordan Fleer',
+        grade: 'Near Mint',
+        link: 'https://www.vinted.hu/member/262606254'
+    }
 
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
+];
+
+let currentIndex = 0;
+
+// ELEMEK
+
+const cardContainer = document.querySelector('.featured-card');
+const cardImage = document.getElementById('card-image');
+const cardTitle = document.getElementById('card-title');
+const cardGrade = document.getElementById('card-grade');
+const cardLink = document.getElementById('card-link');
+
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+// KÁRTYA FRISSÍTÉS
+
+function updateCard(index){
+
+    const card = cards[index];
+
+    // fade out
+
+    cardContainer.classList.add('fade');
 
     setTimeout(() => {
 
-        card.style.transition = "all .6s ease";
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
+        cardImage.src = card.image;
+        cardTitle.textContent = card.title;
+        cardGrade.textContent = card.grade;
+        cardLink.href = card.link;
 
-    }, index * 200);
+        // fade in
 
-});
+        cardContainer.classList.remove('fade');
 
-// --------------------------
-// SIMPLE CARD SLIDER
-// --------------------------
-
-const cardsContainer = document.querySelector(".cards");
-const nextBtn = document.getElementById("next");
-const prevBtn = document.getElementById("prev");
-
-if (cardsContainer && nextBtn && prevBtn) {
-
-    nextBtn.addEventListener("click", () => {
-
-        cardsContainer.scrollBy({
-            left: 320,
-            behavior: "smooth"
-        });
-
-    });
-
-    prevBtn.addEventListener("click", () => {
-
-        cardsContainer.scrollBy({
-            left: -320,
-            behavior: "smooth"
-        });
-
-    });
+    }, 180);
 
 }
 
-// --------------------------
-// NAVBAR SHADOW ON SCROLL
-// --------------------------
+// KÖVETKEZŐ
 
-const navbar = document.querySelector("nav");
+function nextCard(){
 
-window.addEventListener("scroll", () => {
+    currentIndex++;
 
-    if (window.scrollY > 50) {
+    if(currentIndex >= cards.length){
 
-        navbar.style.boxShadow = "0 5px 20px rgba(0,0,0,.35)";
+        currentIndex = 0;
+
+    }
+
+    updateCard(currentIndex);
+
+}
+
+// ELŐZŐ
+
+function prevCard(){
+
+    currentIndex--;
+
+    if(currentIndex < 0){
+
+        currentIndex = cards.length - 1;
+
+    }
+
+    updateCard(currentIndex);
+
+}
+
+// GOMBOK
+
+nextBtn.addEventListener('click', nextCard);
+prevBtn.addEventListener('click', prevCard);
+
+// BILLENTYŰZET
+
+document.addEventListener('keydown', (e) => {
+
+    if(e.key === 'ArrowRight') nextCard();
+
+    if(e.key === 'ArrowLeft') prevCard();
+
+});
+
+// NAVBAR SHADOW
+
+const navbar = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+
+    if(window.scrollY > 20){
+
+        navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,.35)';
 
     } else {
 
-        navbar.style.boxShadow = "none";
+        navbar.style.boxShadow = 'none';
 
     }
 
 });
 
-// --------------------------
-// SMOOTH SCROLL
-// --------------------------
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if (target) {
-
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
-
-});
-
-console.log("✅ Everything is working!");
+console.log('🦁 WERTONCARDS Project Lion v3 loaded');

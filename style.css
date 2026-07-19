@@ -441,3 +441,89 @@ section{
 ```
 
 }
+/* =========================================
+   FINAL ALIGNMENT FIX
+========================================= */
+
+/* HERO KISEBB, KEVESEBB ÜRES HELY */
+
+header{
+    min-height:28vh !important;
+    padding:85px 20px 0 !important;
+}
+
+.hero{
+    margin-top:-5px !important;
+}
+
+/* FEATURED KÖZELEBB A HERO-HOZ */
+
+#featured{
+    padding-top:0 !important;
+    margin-top:-10px;
+}
+
+/* A SLIDER IGAZI KÖZÉPRE IGAZÍTÁSA */
+
+.featured-slider{
+    display:grid !important;
+    grid-template-columns:70px minmax(320px,520px) 70px;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    max-width:760px;
+    margin:0 auto;
+}
+
+/* A NYILAK VÉGRE KÖZÉPEN LESZNEK */
+
+.arrow{
+    align-self:center;
+    justify-self:center;
+    margin-top:0 !important;
+    width:56px;
+    height:56px;
+}
+
+/* KÁRTYA MÉRET FINOMÍTÁS */
+
+.featured-card{
+    width:100% !important;
+    max-width:520px !important;
+    margin:0 auto;
+}
+
+/* KÉP KISEBB, ARÁNYOSABB */
+
+.featured-card img{
+    height:420px !important;
+}
+
+/* CÍM KICSIT FELJEBB */
+
+.featured-card h3{
+    padding-top:18px !important;
+    font-size:1.7rem !important;
+}
+
+/* TRUSTED SELLER KÖZELEBB A KÁRTYÁHOZ */
+
+.stats{
+    padding-top:10px !important;
+    margin-top:-6px;
+}
+
+/* MOBILON VISSZA OSZLOPBA */
+
+@media(max-width:900px){
+
+    .featured-slider{
+        display:flex !important;
+        flex-direction:column;
+        gap:16px;
+    }
+
+    .featured-card img{
+        height:360px !important;
+    }
+}

@@ -475,3 +475,166 @@ footer{
     font-size:18px;
 
 }
+/* ========================================
+   PROJECT LION V3 - SINGLE CARD SLIDER
+======================================== */
+
+/* HERO FELJEBB */
+
+header{
+    min-height:48vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:55px 20px 10px;
+}
+
+.hero{
+    margin-top:-35px;
+}
+
+/* SECTIONS KÖZELEBB */
+
+section{
+    padding:50px 8%;
+}
+
+.section-title{
+    margin-bottom:28px;
+}
+
+/* STATS FELJEBB */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    padding:15px 8% 25px;
+}
+
+/* FEATURED SLIDER */
+
+.featured-slider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:28px;
+}
+
+.featured-card{
+    max-width:520px;
+    width:100%;
+    background:linear-gradient(180deg,#1b1b1b,#111);
+    border-radius:26px;
+    overflow:hidden;
+    border:1px solid rgba(212,175,55,.18);
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+    text-align:center;
+    transition:.3s;
+}
+
+.featured-card:hover{
+    transform:translateY(-6px);
+    border-color:#d4af37;
+}
+
+.featured-card img{
+    width:100%;
+    height:560px;
+    object-fit:cover;
+    transition:.35s;
+}
+
+.featured-card:hover img{
+    transform:scale(1.03);
+}
+
+.featured-card h3{
+    padding:24px 24px 10px;
+    font-size:30px;
+    color:white;
+}
+
+.featured-card p{
+    color:#d4af37;
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:26px;
+}
+
+.arrow{
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#d4af37;
+    color:#111;
+    font-size:28px;
+    cursor:pointer;
+    transition:.25s;
+    flex-shrink:0;
+}
+
+.arrow:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px rgba(212,175,55,.35);
+}
+
+/* ANIMÁLT VÁLTÁS */
+
+.featured-card.fade{
+    opacity:.6;
+    transform:scale(.98);
+}
+
+/* FOOTER SZEBB */
+
+footer{
+    margin-top:70px;
+    background:#090909;
+    border-top:1px solid rgba(212,175,55,.12);
+    padding:55px 20px;
+}
+
+/* MOBIL */
+
+@media(max-width:900px){
+
+    .featured-slider{
+        flex-direction:column;
+    }
+
+    .featured-card img{
+        height:460px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    header{
+        min-height:52vh;
+        padding-top:120px;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .hero h2{
+        font-size:24px;
+    }
+
+    .featured-card img{
+        height:380px;
+    }
+
+    .arrow{
+        width:54px;
+        height:54px;
+    }
+}

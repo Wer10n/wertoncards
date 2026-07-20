@@ -1,32 +1,38 @@
 // ========================================
-// WERTONCARDS - PROJECT LION V3
+// WERTONCARDS - PROJECT LION FINAL
 // SINGLE CARD SLIDER
 // ========================================
 
+// KÁRTYÁK ADATAI
+
 const cards = [
 
-    {
-        image: 'images/card1.jpg',
-        title: '2024 Prizm LeBron James',
-        grade: 'PSA 10',
-        link: 'https://www.vinted.hu/member/262606254'
-    },
+```
+{
+    image: 'images/card1.jpg',
+    title: '2024 Prizm LeBron James',
+    grade: 'PSA 10',
+    link: 'https://www.vinted.hu/member/262606254'
+},
 
-    {
-        image: 'images/card2.jpg',
-        title: '2024 Select Patrick Mahomes',
-        grade: 'PSA 9',
-        link: 'https://www.vinted.hu/member/262606254'
-    },
+{
+    image: 'images/card2.jpg',
+    title: '2024 Select Patrick Mahomes',
+    grade: 'PSA 9',
+    link: 'https://www.vinted.hu/member/262606254'
+},
 
-    {
-        image: 'images/card3.jpg',
-        title: 'Michael Jordan Fleer',
-        grade: 'Near Mint',
-        link: 'https://www.vinted.hu/member/262606254'
-    }
+{
+    image: 'images/card3.jpg',
+    title: 'Michael Jordan Fleer',
+    grade: 'Near Mint',
+    link: 'https://www.vinted.hu/member/262606254'
+}
+```
 
 ];
+
+// AKTUÁLIS KÁRTYA
 
 let currentIndex = 0;
 
@@ -41,79 +47,112 @@ const cardLink = document.getElementById('card-link');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 
+// ========================================
 // KÁRTYA FRISSÍTÉS
+// ========================================
 
 function updateCard(index){
 
-    const card = cards[index];
+```
+const card = cards[index];
 
-    // fade out
+// FADE OUT
 
-    cardContainer.classList.add('fade');
+cardContainer.classList.add('fade');
 
-    setTimeout(() => {
+setTimeout(() => {
 
-        cardImage.src = card.image;
-        cardTitle.textContent = card.title;
-        cardGrade.textContent = card.grade;
-        cardLink.href = card.link;
+    cardImage.src = card.image;
+    cardImage.alt = card.title;
 
-        // fade in
+    cardTitle.textContent = card.title;
+    cardGrade.textContent = card.grade;
+    cardLink.href = card.link;
 
-        cardContainer.classList.remove('fade');
+    // FADE IN
 
-    }, 180);
+    cardContainer.classList.remove('fade');
+
+}, 180);
+```
 
 }
 
-// KÖVETKEZŐ
+// ========================================
+// KÖVETKEZŐ KÁRTYA
+// ========================================
 
 function nextCard(){
 
-    currentIndex++;
+```
+currentIndex++;
 
-    if(currentIndex >= cards.length){
+if(currentIndex >= cards.length){
 
-        currentIndex = 0;
-
-    }
-
-    updateCard(currentIndex);
+    currentIndex = 0;
 
 }
 
-// ELŐZŐ
+updateCard(currentIndex);
+```
+
+}
+
+// ========================================
+// ELŐZŐ KÁRTYA
+// ========================================
 
 function prevCard(){
 
-    currentIndex--;
+```
+currentIndex--;
 
-    if(currentIndex < 0){
+if(currentIndex < 0){
 
-        currentIndex = cards.length - 1;
-
-    }
-
-    updateCard(currentIndex);
+    currentIndex = cards.length - 1;
 
 }
+
+updateCard(currentIndex);
+```
+
+}
+
+// ========================================
+// DOM READY
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+```
+// ELSŐ KÁRTYA BETÖLTÉSE
+
+updateCard(currentIndex);
 
 // GOMBOK
 
 nextBtn.addEventListener('click', nextCard);
 prevBtn.addEventListener('click', prevCard);
 
-// BILLENTYŰZET
+// BILLENTYŰZET VEZÉRLÉS
 
 document.addEventListener('keydown', (e) => {
 
-    if(e.key === 'ArrowRight') nextCard();
+    if(e.key === 'ArrowRight'){
 
-    if(e.key === 'ArrowLeft') prevCard();
+        nextCard();
+
+    }
+
+    if(e.key === 'ArrowLeft'){
+
+        prevCard();
+
+    }
 
 });
 
-// NAVBAR SHADOW
+// NAVBAR SHADOW SCROLLRA
 
 const navbar = document.querySelector('nav');
 
@@ -131,4 +170,17 @@ window.addEventListener('scroll', () => {
 
 });
 
-console.log('🦁 WERTONCARDS Project Lion v3 loaded');
+// AUTOMATIKUS SLIDER (5 MÁSODPERC)
+
+setInterval(() => {
+
+    nextCard();
+
+}, 5000);
+
+// KONZOL ÜZENET
+
+console.log('🦁 WERTONCARDS Project Lion FINAL loaded');
+```
+
+});

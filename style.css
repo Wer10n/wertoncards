@@ -1,5 +1,5 @@
 /* =========================================
-WERTONCARDS - PROJECT LION V3 FINAL
+WERTONCARDS - PROJECT LION FINAL
 ========================================= */
 
 /* RESET */
@@ -15,17 +15,17 @@ scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:
-        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
-        url('images/background.jpg');
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    background-repeat:no-repeat;
-    color:#f5f5f5;
-    line-height:1.6;
-    overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:
+linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
+url('images/background.jpg');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
+color:#f5f5f5;
+line-height:1.6;
+overflow-x:hidden;
 }
 
 img{
@@ -45,7 +45,8 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 8%;
+padding:22px 5%;
+min-height:84px;
 background:rgba(11,11,11,.95);
 backdrop-filter:blur(10px);
 border-bottom:1px solid rgba(212,175,55,.15);
@@ -55,16 +56,16 @@ z-index:1000;
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
+gap:14px;
 color:#d4af37;
-font-size:24px;
-font-weight:700;
+font-size:2rem;
+font-weight:800;
 letter-spacing:1px;
 }
 
 .logo img{
-width:46px;
-height:46px;
+width:60px;
+height:60px;
 border-radius:50%;
 object-fit:cover;
 }
@@ -72,14 +73,33 @@ object-fit:cover;
 nav ul{
 list-style:none;
 display:flex;
-gap:28px;
+gap:36px;
 }
 
-nav a{
+nav ul li a{
 color:#f5f5f5;
 text-decoration:none;
-font-weight:500;
+font-size:1.08rem;
+font-weight:700;
+letter-spacing:0.3px;
+position:relative;
+padding:4px 0;
 transition:.25s;
+}
+
+nav ul li a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:2px;
+background:#d4af37;
+transition:width .25s ease;
+}
+
+nav ul li a:hover::after{
+width:100%;
 }
 
 nav a:hover
@@ -89,45 +109,68 @@ HERO
 ========================================= */
 
 header{
-min-height:38vh;
+width:100%;
+min-height:42vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:110px 20px 20px;
+padding:145px 20px 40px;
 }
 
 .hero{
 width:100%;
-max-width:900px;
+max-width:1400px;
 margin:0 auto;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 .hero h1{
-font-size:clamp(3rem,8vw,5.8rem);
+font-size:clamp(4.5rem,10vw,8rem);
 font-weight:800;
 color:#d4af37;
 line-height:1;
-margin-bottom:16px;
+letter-spacing:-2px;
+margin-bottom:20px;
 text-shadow:0 0 30px rgba(212,175,55,.28);
 }
 
 .hero h2{
-font-size:clamp(1.2rem,3vw,2rem);
-margin-bottom:12px;
+font-size:clamp(1.8rem,3vw,2.8rem);
+margin-bottom:18px;
 }
 
 .hero p{
 color:#b5b5b5;
-margin-bottom:28px;
+font-size:1.15rem;
+margin-bottom:20px;
+}
+
+.hero-badge{
+display:inline-block;
+margin-top:12px;
+margin-bottom:24px;
+padding:8px 18px;
+border:1px solid rgba(212,175,55,.35);
+border-radius:999px;
+color:#d4af37;
+font-size:.95rem;
+font-weight:600;
+background:rgba(212,175,55,.06);
 }
 
 .buttons{
+width:100%;
 display:flex;
 justify-content:center;
 align-items:center;
 gap:16px;
 flex-wrap:wrap;
+margin-top:8px;
 }
 
 /* =========================================
@@ -138,11 +181,12 @@ BUTTONS
 display:inline-flex;
 align-items:center;
 justify-content:center;
-padding:14px 28px;
-border-radius:14px;
+padding:16px 34px;
+border-radius:16px;
 background:#d4af37;
 color:#111;
 text-decoration:none;
+font-size:1rem;
 font-weight:600;
 transition:.25s;
 }
@@ -165,14 +209,14 @@ SECTIONS
 ========================================= */
 
 section{
-padding:40px 8%;
+padding:50px 4%;
 }
 
 .section-title{
 text-align:center;
 color:#d4af37;
-font-size:clamp(2rem,5vw,3rem);
-margin-bottom:24px;
+font-size:clamp(2.5rem,5vw,4rem);
+margin-bottom:34px;
 }
 
 /* =========================================
@@ -181,22 +225,27 @@ FEATURED CARD
 
 #featured{
 width:100%;
-max-width:1200px;
+max-width:1700px;
 margin:0 auto;
 padding-top:10px;
+padding-bottom:18px;
 }
 
 .featured-slider{
+width:100%;
+max-width:1500px;
+margin:0 auto;
 display:flex;
 align-items:center;
 justify-content:center;
-gap:24px;
-width:100%;
+gap:40px;
 }
 
 .featured-card{
+flex:0 0 720px;
+max-width:720px;
 width:100%;
-max-width:520px;
+margin:0 auto;
 background:linear-gradient(180deg,#1b1b1b,#111);
 border-radius:28px;
 overflow:hidden;
@@ -218,18 +267,18 @@ transform:scale(.98);
 
 .featured-card img{
 width:100%;
-height:430px;
+height:560px;
 object-fit:cover;
 }
 
 .featured-card h3{
-padding:22px 22px 8px;
-font-size:1.8rem;
+padding:28px 22px 8px;
+font-size:2.2rem;
 }
 
 .featured-card p{
 color:#d4af37;
-font-size:1.2rem;
+font-size:1.35rem;
 font-weight:700;
 margin-bottom:24px;
 }
@@ -237,15 +286,15 @@ margin-bottom:24px;
 /* NYILAK */
 
 .arrow{
-width:56px;
-height:56px;
-min-width:56px;
-min-height:56px;
+width:64px;
+height:64px;
+min-width:64px;
+min-height:64px;
 border:none;
 border-radius:50%;
 background:#d4af37;
 color:#111;
-font-size:1.7rem;
+font-size:2rem;
 cursor:pointer;
 display:flex;
 align-items:center;
@@ -264,19 +313,30 @@ TRUST SECTION
 ========================================= */
 
 .stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
-max-width:1200px;
-margin:20px auto 0;
+width:100%;
+max-width:1700px;
+margin:24px auto 0;
+display:flex;
+justify-content:center;
+align-items:stretch;
+gap:28px;
+flex-wrap:nowrap;
 }
 
 .stat{
+flex:1 1 0;
+min-width:220px;
+max-width:none;
+min-height:150px;
 background:linear-gradient(180deg,#1b1b1b,#141414);
 border:1px solid rgba(212,175,55,.12);
 border-radius:22px;
-padding:28px;
+padding:34px;
 text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 transition:.25s;
 }
 
@@ -288,22 +348,31 @@ box-shadow:0 18px 40px rgba(0,0,0,.35);
 
 .stat h3{
 color:#d4af37;
-margin-bottom:10px;
+font-size:1.25rem;
+margin-bottom:14px;
 }
 
 .stat p{
 color:#b5b5b5;
+font-size:1rem;
 }
 
 /* =========================================
 ABOUT
 ========================================= */
 
+#about{
+max-width:1500px;
+margin:0 auto;
+}
+
 .about-text{
-max-width:850px;
+max-width:1000px;
 margin:0 auto;
 text-align:center;
 color:#b5b5b5;
+font-size:1.12rem;
+line-height:1.9;
 }
 
 /* =========================================
@@ -336,7 +405,7 @@ padding:50px 20px;
 }
 
 .footer-content{
-max-width:1000px;
+max-width:1400px;
 margin:0 auto;
 text-align:center;
 }
@@ -372,23 +441,86 @@ font-size:.95rem;
 }
 
 /* =========================================
+TABLET
+========================================= */
+
+@media(max-width:1100px){
+
+```
+.logo{
+    font-size:1.6rem;
+}
+
+.logo img{
+    width:52px;
+    height:52px;
+}
+
+nav ul{
+    gap:24px;
+}
+
+nav ul li a{
+    font-size:1rem;
+}
+
+.hero h1{
+    font-size:4.5rem;
+}
+
+.featured-card{
+    max-width:560px;
+    flex-basis:560px;
+}
+
+.featured-card img{
+    height:460px;
+}
+```
+
+}
+
+/* =========================================
 MOBILE
 ========================================= */
 
 @media(max-width:900px){
 
 ```
+section{
+    padding:32px 6%;
+}
+
+.hero h1{
+    font-size:3.2rem;
+}
+
+.hero h2{
+    font-size:1.35rem;
+}
+
 .featured-slider{
     flex-direction:column;
     gap:18px;
 }
 
-.stats{
-    grid-template-columns:1fr;
+.featured-card{
+    max-width:100%;
+    flex:0 0 auto;
 }
 
 .featured-card img{
     height:360px;
+}
+
+.stats{
+    flex-direction:column;
+    align-items:center;
+}
+
+.stat{
+    width:100%;
+    max-width:420px;
 }
 ```
 
@@ -400,7 +532,17 @@ MOBILE
 nav{
     flex-direction:column;
     gap:12px;
-    padding:14px 6%;
+    min-height:auto;
+    padding:16px 6%;
+}
+
+.logo{
+    font-size:1.3rem;
+}
+
+.logo img{
+    width:44px;
+    height:44px;
 }
 
 nav ul{
@@ -409,9 +551,13 @@ nav ul{
     justify-content:center;
 }
 
+nav ul li a{
+    font-size:.95rem;
+}
+
 header{
     min-height:42vh;
-    padding-top:130px;
+    padding-top:135px;
 }
 
 .hero h1{
@@ -435,535 +581,29 @@ header{
 .featured-card img{
     height:340px;
 }
-
-section{
-    padding:32px 6%;
-}
 ```
 
 }
+
 /* =========================================
-   ABSOLUTE FINAL LAYOUT FIX
+ULTRA WIDE
 ========================================= */
-
-/* A HERO TELJES KÖZÉPRE IGAZÍTÁSA */
-
-header{
-    width:100%;
-    min-height:34vh !important;
-    display:flex !important;
-    justify-content:center !important;
-    align-items:center !important;
-    text-align:center !important;
-    padding:120px 20px 30px !important;
-}
-
-.hero{
-    width:100% !important;
-    max-width:900px !important;
-    margin:0 auto !important;
-    display:flex !important;
-    flex-direction:column !important;
-    align-items:center !important;
-    justify-content:center !important;
-    text-align:center !important;
-}
-
-.hero h1{
-    margin:0 auto 16px !important;
-}
-
-.hero h2{
-    margin:0 auto 12px !important;
-}
-
-.hero p{
-    margin:0 auto 24px !important;
-}
-
-.buttons{
-    width:100%;
-    display:flex !important;
-    justify-content:center !important;
-    align-items:center !important;
-    gap:16px !important;
-    flex-wrap:wrap !important;
-    margin-top:8px;
-}
-
-/* FEATURED TÖKÉLETES KÖZÉP */
-
-#featured{
-    width:100%;
-    max-width:1200px;
-    margin:0 auto;
-}
-
-.featured-slider{
-    width:100%;
-    display:flex !important;
-    justify-content:center !important;
-    align-items:center !important;
-    gap:24px !important;
-}
-
-.featured-card{
-    flex:0 0 520px;
-    max-width:520px;
-    width:100%;
-    margin:0 auto;
-}
-
-/* TRUSTED SELLER EGY SORBAN */
-
-.stats{
-    width:100%;
-    max-width:1200px;
-    margin:24px auto 0 !important;
-    display:grid !important;
-    grid-template-columns:repeat(3,1fr) !important;
-    gap:24px !important;
-}
-
-.stat{
-    width:100%;
-    min-height:120px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-/* MOBIL */
-
-@media(max-width:900px){
-
-    .featured-slider{
-        flex-direction:column !important;
-    }
-
-    .stats{
-        grid-template-columns:1fr !important;
-    }
-
-    .featured-card{
-        flex:0 0 auto;
-        max-width:100%;
-    }
-}
-/* =========================================
-   FINAL POLISH
-========================================= */
-
-/* NYILAK KÖZELEBB A KÁRTYÁHOZ */
-
-.featured-slider{
-    gap:12px !important;
-}
-
-.arrow{
-    width:52px !important;
-    height:52px !important;
-}
-
-/* KÁRTYA KICSIT SZÉLESEBB */
-
-.featured-card{
-    max-width:560px !important;
-}
-
-/* A HÁROM DOBOZ EGY SORBAN MARADJON */
-
-.stats{
-    display:flex !important;
-    justify-content:center !important;
-    align-items:stretch !important;
-    gap:20px !important;
-    flex-wrap:nowrap !important;
-    max-width:1200px !important;
-}
-
-.stat{
-    flex:1 1 0 !important;
-    min-width:220px !important;
-    max-width:320px !important;
-    min-height:120px !important;
-}
-
-/* KEVESEBB ÜRES HELY */
-
-#featured{
-    padding-bottom:18px !important;
-}
-
-.stats{
-    margin-top:8px !important;
-}
-
-/* MOBILON VISSZA EGYMÁS ALÁ */
-
-@media(max-width:900px){
-
-    .stats{
-        flex-direction:column !important;
-        align-items:center !important;
-    }
-
-    .stat{
-        width:100% !important;
-        max-width:420px !important;
-    }
-
-    .featured-slider{
-        flex-direction:column !important;
-    }
-}
-/* =========================================
-   DESKTOP WIDE UPGRADE
-========================================= */
-
-/* TELJES OLDAL SZÉLESEBB */
-
-section{
-    padding:50px 4% !important;
-}
-
-/* NAVBAR SZÉLESEBB */
-
-nav{
-    padding:18px 4% !important;
-}
-
-/* HERO NAGYOBB */
-
-header{
-    min-height:42vh !important;
-    padding:130px 20px 40px !important;
-}
-
-.hero{
-    max-width:1400px !important;
-}
-
-/* ÓRIÁS CÍM */
-
-.hero h1{
-    font-size:clamp(4.5rem,10vw,8rem) !important;
-    letter-spacing:-2px;
-    margin-bottom:20px !important;
-}
-
-/* NAGYOBB ALCÍM */
-
-.hero h2{
-    font-size:clamp(1.8rem,3vw,2.8rem) !important;
-    margin-bottom:18px !important;
-}
-
-/* NAGYOBB SZÖVEG */
-
-.hero p{
-    font-size:1.15rem !important;
-    margin-bottom:32px !important;
-}
-
-/* NAGYOBB GOMBOK */
-
-.btn{
-    padding:16px 34px !important;
-    font-size:1rem !important;
-    border-radius:16px !important;
-}
-
-/* FEATURED SZEKCIÓ SZÉLESEBB */
-
-#featured{
-    max-width:1700px !important;
-}
-
-/* CÍM NAGYOBB */
-
-.section-title{
-    font-size:clamp(2.5rem,5vw,4rem) !important;
-    margin-bottom:34px !important;
-}
-
-/* KÁRTYA ÉS NYILAK SZÉTHÚZÁSA */
-
-.featured-slider{
-    max-width:1500px !important;
-    gap:40px !important;
-}
-
-/* NAGYOBB KÁRTYA */
-
-.featured-card{
-    max-width:720px !important;
-    flex:0 0 720px !important;
-}
-
-/* KÉP MAGASABB */
-
-.featured-card img{
-    height:560px !important;
-}
-
-/* KÁRTYA SZÖVEG NAGYOBB */
-
-.featured-card h3{
-    font-size:2.2rem !important;
-    padding-top:28px !important;
-}
-
-.featured-card p{
-    font-size:1.35rem !important;
-}
-
-/* NYILAK NAGYOBBAK ÉS KÖZELEBB */
-
-.arrow{
-    width:64px !important;
-    height:64px !important;
-    min-width:64px !important;
-    font-size:2rem !important;
-}
-
-/* TRUSTED SECTION TELJES SZÉLESSÉG */
-
-.stats{
-    max-width:1700px !important;
-    width:100% !important;
-    gap:28px !important;
-    margin-top:24px !important;
-}
-
-/* DOBOZOK NAGYOBBAK */
-
-.stat{
-    max-width:none !important;
-    min-height:150px !important;
-    padding:34px !important;
-}
-
-.stat h3{
-    font-size:1.25rem !important;
-    margin-bottom:14px !important;
-}
-
-.stat p{
-    font-size:1rem !important;
-}
-
-/* ABOUT SZÉLESEBB */
-
-#about{
-    max-width:1500px;
-    margin:0 auto;
-}
-
-.about-text{
-    max-width:1000px !important;
-    font-size:1.12rem !important;
-    line-height:1.9 !important;
-}
-
-/* FOOTER SZÉLESEBB */
-
-.footer-content{
-    max-width:1400px !important;
-}
-
-/* ULTRA WIDE MONITOROK */
 
 @media(min-width:1800px){
 
-    .hero h1{
-        font-size:8rem !important;
-    }
-
-    .featured-card{
-        max-width:780px !important;
-        flex-basis:780px !important;
-    }
-
-    .featured-card img{
-        height:620px !important;
-    }
+```
+.hero h1{
+    font-size:8rem;
 }
 
-/* TABLET */
-
-@media(max-width:1100px){
-
-    .hero h1{
-        font-size:4.5rem !important;
-    }
-
-    .featured-card{
-        max-width:560px !important;
-        flex-basis:560px !important;
-    }
-
-    .featured-card img{
-        height:460px !important;
-    }
+.featured-card{
+    max-width:780px;
+    flex-basis:780px;
 }
 
-/* MOBIL MARAD SZÉP */
-
-@media(max-width:900px){
-
-    section{
-        padding:32px 6% !important;
-    }
-
-    .hero h1{
-        font-size:3.2rem !important;
-    }
-
-    .hero h2{
-        font-size:1.35rem !important;
-    }
-
-    .featured-slider{
-        flex-direction:column !important;
-        gap:18px !important;
-    }
-
-    .featured-card{
-        max-width:100% !important;
-        flex:0 0 auto !important;
-    }
-
-    .featured-card img{
-        height:360px !important;
-    }
-
-    .stats{
-        flex-direction:column !important;
-        align-items:center !important;
-    }
-
-    .stat{
-        width:100% !important;
-        max-width:420px !important;
-    }
+.featured-card img{
+    height:620px;
 }
-/* =========================================
-   NAVBAR PREMIUM UPGRADE
-========================================= */
+```
 
-/* MAGASABB NAVBAR */
-
-nav{
-    padding:22px 5% !important;
-    min-height:84px;
-}
-
-/* NAGYOBB LOGÓ + SZÖVEG */
-
-.logo{
-    gap:14px !important;
-    font-size:2rem !important;
-    font-weight:800 !important;
-    letter-spacing:1px;
-}
-
-.logo img{
-    width:60px !important;
-    height:60px !important;
-}
-
-/* MENÜ SZAVAK NAGYOBBAK */
-
-nav ul{
-    gap:36px !important;
-}
-
-nav ul li a{
-    font-size:1.08rem !important;
-    font-weight:700 !important;
-    letter-spacing:0.3px;
-    position:relative;
-    padding:4px 0;
-}
-
-/* SZÉP ARANY HOVER VONAL */
-
-nav ul li a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:#d4af37;
-    transition:width .25s ease;
-}
-
-nav ul li a:hover::after{
-    width:100%;
-}
-
-nav ul li a:hover{
-    color:#d4af37 !important;
-}
-
-/* A HERO KICSIT LEJJEBB, HOGY A NAGY NAVBAR ELFÉRJEN */
-
-header{
-    padding-top:145px !important;
-}
-
-/* TABLET */
-
-@media(max-width:1100px){
-
-    .logo{
-        font-size:1.6rem !important;
-    }
-
-    .logo img{
-        width:52px !important;
-        height:52px !important;
-    }
-
-    nav ul{
-        gap:24px !important;
-    }
-
-    nav ul li a{
-        font-size:1rem !important;
-    }
-}
-
-/* MOBIL */
-
-@media(max-width:768px){
-
-    nav{
-        min-height:auto;
-        padding:16px 6% !important;
-    }
-
-    .logo{
-        font-size:1.3rem !important;
-    }
-
-    .logo img{
-        width:44px !important;
-        height:44px !important;
-    }
-
-    nav ul{
-        gap:18px !important;
-    }
-
-    nav ul li a{
-        font-size:.95rem !important;
-    }
-
-    header{
-        padding-top:135px !important;
-    }
 }
